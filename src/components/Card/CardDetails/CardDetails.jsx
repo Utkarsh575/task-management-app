@@ -27,8 +27,9 @@ export default function CardDetails(props) {
   const [labelShow, setLabelShow] = useState(false);
   const Input = (props) => {
     return (
-      <div className="">
+      <div className="h-full w-full mx-36">
         <input
+          className="h-full w-full text-black p-2"
           autoFocus
           defaultValue={text}
           type={"text"}
@@ -117,7 +118,7 @@ export default function CardDetails(props) {
     <Modal onClose={props.onClose}>
       <div
         className="local__bootstrap p-10 rounded-md"
-        style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
+        style={{ backgroundColor: "rgba(0,0,0,0.6)", color: "white" }}
       >
         <div
           className="container  p-10  rounded-md "
@@ -129,7 +130,7 @@ export default function CardDetails(props) {
         >
           <div className="row pb-4">
             <div className="col-12">
-              <div className="d-flex align-items-center pt-3 gap-2">
+              <div className="d-flex justify-content-center pt-3 gap-2 text-center ">
                 {/* <CreditCard className="icon__md" /> */}
                 {input ? (
                   <Input title={values.title} />
@@ -177,9 +178,8 @@ export default function CardDetails(props) {
               </div>
               <div className="check__list mt-2">
                 <div className="d-flex align-items-end  justify-content-between">
-                  <div className="d-flex align-items-center gap-2">
-                    <CheckSquare className="icon__md" />
-                    <h6>Check List</h6>
+                  <div className="flex items-center justify-center gap-2">
+                    <h6>☑️ Check List</h6>
                   </div>
                   <div className="">
                     <button

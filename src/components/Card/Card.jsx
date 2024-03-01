@@ -113,7 +113,7 @@ const Card = (props) => {
             {...provided.dragHandleProps}
             ref={provided.innerRef}
           >
-            <div className="card__text py-2">
+            <div className="card__text py-2 text-white">
               <p>{props.title}</p>
               <MoreHorizontal
                 className="car__more"

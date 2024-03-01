@@ -22,7 +22,7 @@ body {
   display: flex;
   gap: 30px;
   padding-inline: 2rem;
-  color: var(--text-color);
+  color: #000 !important;
 }
 /* p {
   font-size: 16px;

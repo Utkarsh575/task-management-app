@@ -25,7 +25,7 @@ const Editable = (props) => {
         <form onSubmit={handleOnSubmit}>
           <div className={`editable__input ${props.class}`}>
             <input
-              className="text-black p-2 rounded-md focus:border-0"
+              className="text-black p-2 rounded-md focus:border-0 "
               placeholder={props.placeholder}
               id={"edit-input"}
               type={"text"}

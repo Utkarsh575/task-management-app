@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Navbar from "../components/Navbar/Navbar";
-import Board from "../components/Board/Board";
+import Navbar from "./components/Navbar/Navbar";
+import Board from "./components/Board/Board";
 // import data from '../data'
 import { DragDropContext } from "react-beautiful-dnd";
 import { v4 as uuidv4 } from "uuid";
-import Editable from "../components/Editable/Editable";
+import Editable from "./components/Editable/Editable";
 import useLocalStorage from "use-local-storage";
 import "../bootstrap.css";
 function App() {
@@ -132,7 +132,7 @@ function App() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div className="App" data-theme={theme}>
+      <div className="App" data-theme={theme} >
         <Navbar switchTheme={switchTheme} />
         <div className="app_outer">
           <div className="app_boards">

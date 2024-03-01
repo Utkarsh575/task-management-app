@@ -1,25 +1,26 @@
-:root {
-  --backgroud-color: #fff;
-  --board-color: #f2f2f3;
-  --card-color: #fff;
-  --text-color: #000;
-  --drop-down-color: #fff;
-  --card-box-shadow: #e2dede;
+
+/* :root {
+  #fff: #fff;
+  #f2f2f3: #f2f2f3;
+  #fff: #fff;
+  #000: #000;
+  #fff: #fff;
+  #e2dede: #e2dede;
   --add-btn-hover: #000;
-  --modal-color: #fff;
-  --task-hover: #091e4214;
+  #fff: #fff;
+  #091e4214: #091e4214;
 }
 [data-theme="dark"] {
   --background-color: #212121;
-  --board-color: #383838;
-  --card-color: #212121;
-  --card-box-shadow: #2a2a2a;
-  --drop-down-color: #383838;
-  --text-color: #fff;
+  #f2f2f3: #383838;
+  #fff: #212121;
+  #e2dede: #2a2a2a;
+  #fff: #383838;
+  #000: #fff;
   --add-btn-hover: #fff;
-  --modal-color: #383838;
-  --task-hover: #212121;
-}
+  #fff: #383838;
+  #091e4214: #212121;
+} */
 
 body {
   margin: 0;
@@ -28,13 +29,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-color);
-  // background-color: var(--background-color);
+  color: #000;
   background: url("https://images.unsplash.com/photo-1533371452382-d45a9da51ad9?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.9;
-  
 }
 
 code {

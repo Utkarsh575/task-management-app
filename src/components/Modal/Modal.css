@@ -15,9 +15,10 @@
 .modal__content {
   /* overflow-y: auto; */
   max-height: 95vh;
-  background-color: var(--modal-color);
+  background-color: #c65102;
   border-radius: 3px;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
+  
 }
 
 .modal__content::-webkit-scrollbar {

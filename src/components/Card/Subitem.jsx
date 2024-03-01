@@ -4,7 +4,7 @@ const Subitem = ({ updateTask, items }) => {
   const [show, setShow] = React.useState(true);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full" style={{color:"white"}}>
       <button
         className="absolute right-5  -translate-y-5"
         onClick={() => {
