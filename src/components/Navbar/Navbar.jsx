@@ -65,7 +65,7 @@ export default function Navbar(props) {
       ) : (
         <h2
           style={{ fontSize: "30px", fontWeight: "bold" }}
-          className="text-white"
+          className="text-black text-xl py-2"
           onDoubleClick={() => {
             setIsEdit(!isEdit);
           }}

@@ -29,7 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #000;
-  background: url("/src/assets/bg.mp4");
+  background: url("/src/assets/bg.gif");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.9;
