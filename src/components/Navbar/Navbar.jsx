@@ -44,10 +44,17 @@ export default function Navbar(props) {
   };
 
   return (
-    <div className="navbar">
+    <div
+      className="navbar"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       {isEdit ? (
         <input
-          style={{ marginLeft: "45%" }}
+          // style={{ marginLeft: "45%" }}
           className="p-2 text-black w-auto"
           defaultValue={title}
           type="text"
@@ -57,7 +64,7 @@ export default function Navbar(props) {
         />
       ) : (
         <h2
-          style={{ marginLeft: "45%", fontSize: "30px", fontWeight: "bold" }}
+          style={{ fontSize: "30px", fontWeight: "bold" }}
           className="text-white"
           onDoubleClick={() => {
             setIsEdit(!isEdit);
@@ -67,13 +74,33 @@ export default function Navbar(props) {
         </h2>
       )}
       <audio ref={audioRef} src={test} />
-      <button
-        style={{ backgroundColor: "#afeeee" }}
-        className="bg-white text-black p-3 rounded-full font-bold "
-        onClick={togglePlay}
+      <div
+        style={{
+          right: "0",
+          top: "0",
+          marginRight: "20px",
+          position: "absolute",
+          display: "flex",
+        }}
       >
-        {isPlaying ? <Pause /> : <Play />}
-      </button>
+        <button
+          style={{ backgroundColor: "#afeeee" }}
+          className="bg-white text-black p-3 rounded-full font-bold "
+          onClick={togglePlay}
+        >
+          {isPlaying ? <Pause /> : <Play />}
+        </button>
+
+        <button
+          className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white border border-gray-900 rounded ml-10"
+          onClick={() => {
+            localStorage.removeItem("idToken");
+            props.setLoginToken("");
+          }}
+        >
+          Logout
+        </button>
+      </div>
     </div>
   );
 }
