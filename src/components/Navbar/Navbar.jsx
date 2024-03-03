@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./Navbar.css";
 import test from "../../assets/test.mp3";
 import { Pause, Play } from "react-feather";
+import { useToken } from "../../store/store";
 
 export default function Navbar(props) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -42,6 +43,7 @@ export default function Navbar(props) {
     }
     setIsPlaying(!isPlaying);
   };
+  const setFirebaseToken = useToken((state) => state.setFirebaseToken);
 
   return (
     <div
@@ -94,8 +96,14 @@ export default function Navbar(props) {
         <button
           className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white border border-gray-900 rounded ml-10"
           onClick={() => {
-            localStorage.removeItem("idToken");
-            props.setLoginToken("");
+            // props.setDone(false);
+            props.setData(() => {
+              [];
+            });
+            // localStorage.removeItem("fbtoken");
+            // localStorage.removeItem("kanban-board");
+            setFirebaseToken(null);
+            window.location.reload();
           }}
         >
           Logout

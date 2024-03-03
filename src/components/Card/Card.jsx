@@ -36,39 +36,47 @@ const Card = (props) => {
   };
 
   const updateTask = (id) => {
-    const taskIndex = values.task.findIndex((item) => item.id === id);
-    values.task[taskIndex].completed = !values.task[taskIndex].completed;
-    setValues({ ...values });
+    if (values.task) {
+      const taskIndex = values.task.findIndex((item) => item.id === id);
+      values.task[taskIndex].completed = !values.task[taskIndex].completed;
+      setValues({ ...values });
+    }
   };
   const updateTitle = (value) => {
     setValues({ ...values, title: value });
   };
 
   const calculatePercent = () => {
-    const totalTask = values.task.length;
-    const completedTask = values.task.filter(
-      (item) => item.completed === true
-    ).length;
+    if (values.task) {
+      const totalTask = values.task.length;
+      const completedTask = values.task.filter(
+        (item) => item.completed === true
+      ).length;
 
-    return Math.floor((completedTask * 100) / totalTask) || 0;
+      return Math.floor((completedTask * 100) / totalTask) || 0;
+    }
   };
 
   const removeTag = (id) => {
-    const tempTag = values.tags.filter((item) => item.id !== id);
-    setValues({
-      ...values,
-      tags: tempTag,
-    });
+    if (values.tags) {
+      const tempTag = values.tags.filter((item) => item.id !== id);
+      setValues({
+        ...values,
+        tags: tempTag,
+      });
+    }
   };
 
   const addTag = (value, color) => {
-    values.tags.push({
-      id: uuidv4(),
-      tagName: value,
-      color: color,
-    });
+    if (values.tags) {
+      values.tags.push({
+        id: uuidv4(),
+        tagName: value,
+        color: color,
+      });
 
-    setValues({ ...values });
+      setValues({ ...values });
+    }
   };
 
   const handelClickListner = (e) => {

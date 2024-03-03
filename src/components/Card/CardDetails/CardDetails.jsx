@@ -41,17 +41,21 @@ export default function CardDetails(props) {
     );
   };
   const addTask = (value) => {
-    values.task.push({
-      id: uuidv4(),
-      task: value,
-      completed: false,
-    });
-    setValues({ ...values });
+    if (values.task) {
+      values.task.push({
+        id: uuidv4(),
+        task: value,
+        completed: false,
+      });
+      setValues({ ...values });
+    }
   };
 
   const removeTask = (id) => {
-    const remaningTask = values.task.filter((item) => item.id !== id);
-    setValues({ ...values, task: remaningTask });
+    if (values.task) {
+      const remaningTask = values.task.filter((item) => item.id !== id);
+      setValues({ ...values, task: remaningTask });
+    }
   };
 
   const deleteAllTask = () => {
@@ -62,21 +66,25 @@ export default function CardDetails(props) {
   };
 
   const updateTask = (id) => {
-    const taskIndex = values.task.findIndex((item) => item.id === id);
-    values.task[taskIndex].completed = !values.task[taskIndex].completed;
-    setValues({ ...values });
-  };
-  const updateTitle = (value) => {
-    setValues({ ...values, title: value });
+    if (values.task) {
+      const taskIndex = values.task.findIndex((item) => item.id === id);
+      values.task[taskIndex].completed = !values.task[taskIndex].completed;
+      setValues({ ...values });
+    }
+    const updateTitle = (value) => {
+      setValues({ ...values, title: value });
+    };
   };
 
   const calculatePercent = () => {
-    const totalTask = values.task.length;
-    const completedTask = values.task.filter(
-      (item) => item.completed === true
-    ).length;
+    if (values.task) {
+      const totalTask = values.task.length;
+      const completedTask = values.task.filter(
+        (item) => item.completed === true
+      ).length;
 
-    return Math.floor((completedTask * 100) / totalTask) || 0;
+      return Math.floor((completedTask * 100) / totalTask) || 0;
+    }
   };
 
   const removeTag = (id) => {
@@ -88,13 +96,15 @@ export default function CardDetails(props) {
   };
 
   const addTag = (value, color) => {
-    values.tags.push({
-      id: uuidv4(),
-      tagName: value,
-      color: color,
-    });
+    if (values.tags) {
+      values.tags.push({
+        id: uuidv4(),
+        tagName: value,
+        color: color,
+      });
 
-    setValues({ ...values });
+      setValues({ ...values });
+    }
   };
 
   const handelClickListner = (e) => {
@@ -152,7 +162,7 @@ export default function CardDetails(props) {
                 className="d-flex label__color flex-wrap"
                 style={{ width: "500px", paddingRight: "10px" }}
               >
-                {values.tags.length !== 0 ? (
+                {values.tags && values.tags.length !== 0 ? (
                   values.tags.map((item) => (
                     <span
                       className="d-flex justify-content-between align-items-center gap-2"
@@ -206,7 +216,7 @@ export default function CardDetails(props) {
                 </div>
 
                 <div className="my-2">
-                  {values.task.length !== 0 ? (
+                  {values.task && values.task.length !== 0 ? (
                     values.task.map((item, index) => (
                       <div className="task__list d-flex align-items-start gap-2">
                         <input
